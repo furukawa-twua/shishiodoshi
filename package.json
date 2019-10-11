@@ -1,0 +1,26 @@
+{
+  "name": "shishiodoshi",
+  "version": "1.0.0",
+  "main": "./app/src/main.js",
+  "description": "鹿威し",
+  "author": {
+    "name": "furukawa"
+  },
+  "license": "MIT",
+  "build": {
+    "productName": "鹿威し",
+    "appId": "com.electron.${name}",
+    "win": {
+      "target": "portable",
+      "icon": "app/icon.ico"
+    }
+  },
+  "scripts": {
+    "start": "electron ./app",
+    "build-win": "electron-builder build --win"
+  },
+  "devDependencies": {
+    "electron": "^5.0.11",
+    "electron-builder": "^21.2.0"
+  }
+}

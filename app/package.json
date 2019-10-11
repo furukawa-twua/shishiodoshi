@@ -1,0 +1,13 @@
+{
+  "name": "shishiodoshi",
+  "version": "1.0.0",
+  "main": "./src/main.js",
+  "description": "鹿威し",
+  "author": {
+    "name": "furukawa"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "electron-json-storage": "^4.1.8"
+  }
+}

@@ -1,0 +1,9 @@
+directories:
+  output: dist
+  buildResources: build
+productName: 鹿威し
+appId: 'com.electron.${name}'
+win:
+  target: portable
+  icon: app/icon.ico
+electronVersion: 5.0.11

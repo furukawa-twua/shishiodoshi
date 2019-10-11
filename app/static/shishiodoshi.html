@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>鹿威し</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+    <link rel="stylesheet" href="odoshistyle.css">
+    <script type="text/javascript" src="./odoshiscript.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div id="kakehi-sityu" class="have-controller" data-have="water-sound-controller"></div>
+      <div id="kakehi-makura" class="have-controller" data-have="water-sound-controller"></div>
+      <div id="kakehi-makura-side" class="have-controller" data-have="drag-controller"></div>
+      <div id="water-start" class="have-controller" data-have="water-sound-controller"></div>
+      <div id="water-drop" class="have-controller" data-have="water-sound-controller"></div>
+      <div id="kakehi-sosogiguti-curve" class="have-controller" data-have="water-sound-controller"></div>
+      <div id="kakehi-sosogiguti" class="have-controller" data-have="water-sound-controller"></div>
+      <div id="shishiodoshi-sityu" class="have-controller" data-have="drag-controller"></div>
+      <div id="shishiodoshi-takedutu" class="have-controller" data-have="sukohn-interval-controller"></div>
+      <div id="tukubai" class="have-controller" data-have="app-controller"></div>
+      <div id="stone" class="have-controller" data-have="sukohn-sound-controller"></div>
+      <div id="app-controller" class="controller-box controller-hidden">
+        <div class="title-bar">
+          <span class="title">全般</span>
+          <button type="button" id="a-close" class="controller-close-btn" data-parent="app-controller">×</button>
+        </div>
+        <p class="controll-row">
+          <button type="button" id="mute" class="btn">無音</button>
+          <button type="button" id="stop" class="btn">停止</button>
+          <button type="button" id="reboot" class="btn">再起動</button>
+          <button type="button" id="exit" class="btn">終了</button>
+          <button type="button" id="about" class="btn">アプリについて</button>
+        </p>
+      </div>
+      <div id="about-controller" class="controller-box controller-hidden">
+        <div class="title-bar">
+          <span class="title">アプリについて</span>
+          <button type="button" id="about-close" class="controller-close-btn" data-parent="about-controller">×</button>
+        </div>
+        <p class="controll-row">
+          <img class="about-icon" src="./../icon.ico" alt="icon" width="48" height="48">
+          <span class="about-text">鹿威し v1.0.0</span>
+        </p>
+        <div class="controll-row">
+          <img class="about-icon" src="./../fsx_icon.ico" alt="fsx" width="48" height="48">
+          <div class="about-fsx">
+              <p class="about-text">project</p>
+              <p class="fsx">Furukawa_SPECIAL_X</p>
+          </div>
+        </div>
+        <p class="controll-row"><span class="about-text link" data-url="https://github.com/furukawa-twua/shishiodoshi">https://github.com/furukawa-twua/shishiodoshi</span></p>
+      </div>
+      <div id="sukohn-sound-controller" class="controller-box controller-hidden">
+        <div class="title-bar">
+          <span class="title">鹿威しの音量</span>
+          <button type="button" id="hs-close" class="controller-close-btn" data-parent="sukohn-sound-controller">×</button>
+        </div>
+        <p class="controll-row">
+          <input type="range" name="range" id="sukohn-sound-volume-range" class="range" min="0" max="100" step="1" value="100">
+          <span id="sukohn-sound-volume" class="volume">100</span>
+        </p>
+        <p id="hs-mute-attention" class="controll-row attention"></p>
+        <p id="hs-stop-attention" class="controll-row attention"></p>
+      </div>
+      <div id="water-sound-controller" class="controller-box controller-hidden">
+        <div class="title-bar">
+          <span class="title">水の音量</span>
+          <button type="button" id="ws-close" class="controller-close-btn" data-parent="water-sound-controller">×</button>
+        </div>
+        <p class="controll-row">
+          <input type="range" name="range" id="water-sound-volume-range" class="range" min="0" max="100" step="1" value="100">
+          <span id="water-sound-volume" class="volume">100</span>
+        </p>
+        <p id="ws-mute-attention" class="controll-row attention"></p>
+        <p id="ws-stop-attention" class="controll-row attention"></p>
+      </div>
+      <div id="sukohn-interval-controller" class="controller-box controller-hidden">
+        <div class="title-bar">
+          <span class="title">鹿威しの間隔</span>
+          <button type="button" id="hi-close" class="controller-close-btn" data-parent="sukohn-interval-controller">×</button>
+        </div>
+        <p class="controll-row">
+          <input type="text" name="text" id="sukohn-interval-text" class="text" value="6.4" size="7" placeholder="初期値:6.4">
+          <span id="sukohn-interval" class="unit">秒</span>
+        </p>
+        <p id="sukohn-interval-attention" class="controll-row attention"></p>
+        <p id="hi-stop-attention" class="controll-row attention"></p>
+      </div>
+      <div id="loading" class="full"><p class="loading-msg">Loading now...</p></div>
+      <div id="error" class="full display-none">
+        <div id="error-controller" class="controller-box">
+          <div class="title-bar">
+            <span class="title">ローディングエラー</span>
+            <button type="button" id="loading-error-close-btn" class="controller-close-btn">×</button>
+          </div>
+          <p id="error-attention" class="controll-row attention"></p>
+          <pre id="error-msg" class="controll-row pre display-none"></pre>
+          <p class="controll-row">
+            <button type="button" id="error-details" class="btn">詳細</button>
+            <button type="button" id="error-retry" class="btn">リトライ</button>
+            <button type="button" id="error-reboot" class="btn">再起動</button>
+            <button type="button" id="error-skip" class="btn">スキップ</button>
+          </p>
+        </div>
+      </div>
+      <div id="save-error" class="full display-none">
+        <div id="save-error-controller" class="controller-box">
+          <div class="title-bar">
+            <span class="title">保存エラー</span>
+            <button　type="button" id="save-error-close-btn" class="controller-close-btn">×</button>
+          </div>
+          <p id="save-error-attention" class="controll-row attention">設定の保存に失敗しました。</p>
+          <p class="controll-row"><pre id="save-error-msg" class="pre display-none"></pre></p>
+          <p class="controll-row">
+            <button type="button" id="save-error-no-display" class="btn">表示しない</button>
+            <button type="button" id="save-error-details" class="btn">詳細</button>
+            <button type="button" id="save-error-retry" class="btn">リトライ</button>
+            <button type="button" id="save-error-close" class="btn">閉じる</button>
+          </p>
+        </div>
+      </div>
+      <div id="drag-controller" class="controller-box controller-hidden">
+        <div class="title-bar">
+          <span class="title">位置</span>
+          <button type="button" id="d-close" class="controller-close-btn" data-parent="drag-controller">×</button>
+        </div>
+        <div id="drag-area" class="controll-row drag-area"><p class="drag-text">DRAG</p></div>
+        <p class="controll-row">
+          <button type="button" id="drag-left-top" class="btn">左上</button>
+          <button type="button" id="drag-right-top" class="btn">右上</button>
+          <button type="button" id="drag-left-bottom" class="btn">左下</button>
+          <button type="button" id="drag-right-bottom" class="btn">右下</button>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,347 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 345px;
+  height: 189px;
+}
+
+#kakehi-sityu {
+  position: absolute;
+  top: 9px;
+  left: 20px;
+  background-color: darkolivegreen;
+  width: 10px;
+  height: 180px;
+}
+
+#kakehi-makura {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: olivedrab;
+  border-radius: 5px / 12px;
+  width: 50px;
+  height: 24px;
+}
+
+#kakehi-makura-side {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  background-color: khaki;
+  border-radius: 4px / 11px;
+  width: 8px;
+  height: 22px;
+}
+
+#kakehi-sosogiguti-curve {
+  position: absolute;
+  top: 15px;
+  left: 21px;
+  background-color: darkolivegreen;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  width: 10px;
+  height: 10px;
+  transform-origin: 51px 5px;
+  transform: rotate(10deg);
+}
+
+#kakehi-sosogiguti {
+  position: absolute;
+  top: 15px;
+  left: 26px;
+  border-bottom: 10px solid darkolivegreen;
+  border-right: 16px solid transparent;
+  width: 76px;
+  transform: rotate(10deg);
+}
+
+#water-start {
+  position: absolute;
+  top: 24px;
+  left: 105px;
+  border-radius: 0% 100% / 0% 100%;
+  width: 20px;
+  height: 32px;
+  background: radial-gradient(ellipse at 0% 100%, transparent 70%, aquamarine 70%);
+  border-right: 3px solid aquamarine;
+  border-top: 3px solid aquamarine;
+}
+
+#water-drop {
+  position: absolute;
+  top: 59px;
+  left: 125px;
+  background-color: aquamarine;
+  width: 3px;
+  height: 7px;
+}
+
+#shishiodoshi-sityu {
+  position: absolute;
+  top: 64px;
+  left: 210px;
+  background-color: darkgreen;
+  width: 20px;
+  height: 125px;
+  z-index: 1;
+}
+
+#shishiodoshi-takedutu {
+  position: absolute;
+  top: 84px;
+  left: 100px;
+  border-bottom: 25px solid green;
+  border-left: 45px solid transparent;
+  width: 200px;
+  transform: rotate(20deg);
+}
+
+#tukubai {
+  position: absolute;
+  top: 139px;
+  left: 50px;
+  background-color: darkgrey;
+  border-radius: 3px 3px 0 0;
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+}
+
+#stone {
+  position: absolute;
+  top: 140px;
+  left: 270px;
+  background-color: grey;
+  border-radius: 35px 30px 20px 20px;
+  width: 60px;
+  height: 49px;
+}
+
+@keyframes shishiodoshi {
+  0% {
+    transform: rotate(20deg);
+  }
+
+  75%, 85% {
+    transform: rotate(-20deg);
+  }
+
+  100% {
+    transform: rotate(20deg);
+  }
+}
+
+.shishiodoshi-anime {
+  animation-name: shishiodoshi;
+  animation-duration: 1600ms;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+@keyframes water {
+  0% {
+    height: 7px;
+  }
+
+  75%, 85% {
+    height: 80px;
+  }
+
+  100% {
+    height: 7px;
+  }
+}
+
+.water-anime {
+  animation-name: water;
+  animation-duration: 1600ms;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+
+.controller-box {
+  top: 50%;
+  /* transitionのためtransformで縦の中央に */
+  transform: translateY(-50%);
+  position: absolute;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  transition: all 250ms;
+  max-width: 300px;
+  max-height: 175px;
+}
+
+.btn {
+  margin: 3px;
+  padding: 1px 6px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  transition: all 300ms;
+  font-size: 13px;
+}
+.btn:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.btn:active {
+  background-color: grey;
+}
+
+.title-bar {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  border-radius: 50% 50% 0 0;
+}
+
+.title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 10px;
+  line-height: 20px;
+  border-radius: 50% 0 0 0;
+  font-size: 12px;
+  color: black;
+}
+
+.controll-row {
+  margin: 5px 7px;
+}
+
+.controller-close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 0 50% 0 0;
+  border: none;
+}
+.controller-close-btn:hover {
+  background-color: tomato;
+}
+
+.controller-hidden {
+  visibility: hidden;
+  opacity: 0;
+  top: calc(50% - 10px);
+}
+
+.range {
+  vertical-align: middle;
+}
+
+.volume {
+  font-size: 14px;
+  vertical-align: middle;
+  color: grey;
+}
+
+input, button {
+  outline: none;
+}
+
+.have-controller {
+  cursor: pointer;
+}
+
+.attention {
+  font-size: 13px;
+  color: grey;
+}
+
+.full {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, .5);
+  z-index: 9999;
+}
+
+.loading-msg {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: grey;
+}
+
+.display-none {
+  display: none;
+}
+
+.pre {
+  font-size: 13px;
+  background-color: lightgray;
+  height: 50px;
+  overflow: auto;
+}
+
+.drag-area {
+  -webkit-app-region: drag;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: palegreen;
+  height: 100px;
+}
+
+.drag-text {
+  font-size: 24px;
+}
+
+.about-icon {
+  vertical-align: middle;
+}
+
+.about-text {
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.about-fsx {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.fsx {
+  font-family: serif;
+  font-size: 13px;
+}
+
+.link {
+  text-decoration: underline;
+  color: cornflowerblue;
+  cursor: pointer;
+}
+.link:hover {
+  color: firebrick;
+}
