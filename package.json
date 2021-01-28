@@ -20,7 +20,7 @@
     "build-win": "electron-builder build --win"
   },
   "devDependencies": {
-    "electron": "^5.0.11",
+    "electron": "^9.4.0",
     "electron-builder": "^21.2.0"
   }
 }
